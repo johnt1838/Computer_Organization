@@ -1,45 +1,51 @@
-module test;
+// Code your testbench here
+// or browse Examples
+module test; 
+   reg clk; 
+   reg  d;
+   reg reset;
+  wire q;
   
-  wire [7:0] q;
-  reg clk;
-  reg [7:0] d;
+  dffsyn dff (.d(d), .reset(reset), .clk(clk), .q(q));
   
+  //always #5 clk = ~clk;
   
-
-
-  dff8 DFF( .clk(clk), .d(d), .q(q));
-
-initial
-	begin 
-		
+  initial begin 
       $dumpfile("dumpfile.vcd");
 		$dumpvars;
+   reset = 0;
+		clk <= 0;
+		d <= 1; #1;
+		d <= 0; #1;
 		
-
-		clk <= 0;
-		d <= 1; #1;
-		d <= 0; #1;
-
+      reset = 1;
 		clk <= 1;
 		d <= 1; #1;
 		d <= 0; #1;
 
+      reset = 0;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
-
+      
+		reset = 1;
 		clk <= 1;
 		d <= 0; #1;
 		d <= 1; #1;
-
+      
+      
+		reset = 0;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
-
+		
+      	reset = 1;
 		clk <= 1;
 		d <= 1; #1;
 		d <= 0; #1;
 
+      
+      reset = 1;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
@@ -47,12 +53,12 @@ initial
 
 	
 
-
+		reset = 0;
 		clk <= 1;
 		d <= 1; #1;
 		d <= 0; #1;
 
 		$finish;
-	end
-
+    
+  end 
 endmodule

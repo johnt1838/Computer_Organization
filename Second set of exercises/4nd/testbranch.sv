@@ -1,13 +1,14 @@
 module test;
   
-  wire [7:0] q;
+  wire q;
   reg clk;
-  reg [7:0] d;
+  reg reset;
+  reg d;
   
   
 
 
-  dff8 DFF( .clk(clk), .d(d), .q(q));
+  top_module DFF( .clk(clk), .d(d), .q(q),.reset(reset));
 
 initial
 	begin 
@@ -15,31 +16,39 @@ initial
       $dumpfile("dumpfile.vcd");
 		$dumpvars;
 		
-
+		reset = 0;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
-
+		
+      reset = 1;
 		clk <= 1;
 		d <= 1; #1;
 		d <= 0; #1;
 
+      reset = 0;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
-
+      
+		reset = 1;
 		clk <= 1;
 		d <= 0; #1;
 		d <= 1; #1;
-
+      
+      
+		reset = 0;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
-
+		
+      	reset = 1;
 		clk <= 1;
 		d <= 1; #1;
 		d <= 0; #1;
 
+      
+      reset = 1;
 		clk <= 0;
 		d <= 1; #1;
 		d <= 0; #1;
@@ -47,7 +56,7 @@ initial
 
 	
 
-
+		reset = 0;
 		clk <= 1;
 		d <= 1; #1;
 		d <= 0; #1;
