@@ -1,4 +1,4 @@
-module top_module (
+module dffP (
     input clk,
     input in, 
     output reg out);

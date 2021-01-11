@@ -7,9 +7,9 @@
     
   wire out;
 
-    top_module ddf (.clk(clk), .resetn(resetn), .in(in), .out(out));
+    top_module dffa10 (.clk(clk), .resetn(resetn), .in(in), .out(out));
 
-    //always #5 clk = ~clk;
+   
 
     initial begin 
         $dumpfile("dumpfile.vcd");

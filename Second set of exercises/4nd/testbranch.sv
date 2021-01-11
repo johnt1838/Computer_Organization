@@ -8,7 +8,7 @@ module test;
   
 
 
-  top_module DFF( .clk(clk), .d(d), .q(q),.reset(reset));
+  dff DFF( .clk(clk), .d(d), .q(q),.reset(reset));
 
 initial
 	begin 

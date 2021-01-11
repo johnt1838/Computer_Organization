@@ -8,7 +8,7 @@ module test;
   
   dffsyn dff (.d(d), .reset(reset), .clk(clk), .q(q));
   
-  //always #5 clk = ~clk;
+  
   
   initial begin 
       $dumpfile("dumpfile.vcd");

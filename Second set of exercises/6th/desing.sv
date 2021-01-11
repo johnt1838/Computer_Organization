@@ -1,4 +1,4 @@
-module top_module (
+module dff16 (
     input clk,
     input reset,
   input [1:0] ena,

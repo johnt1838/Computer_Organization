@@ -7,7 +7,7 @@ module test;
   reg [1:0] ena;
   wire [7:0]q;
   
-  top_module dff (.d(d), .reset(reset),.ena(ena), .clk(clk), .q(q));
+ dff16 dff (.d(d), .reset(reset),.ena(ena), .clk(clk), .q(q));
   
   //always #5 clk = ~clk;
   

@@ -1,4 +1,4 @@
-module top_module (
+module dff8a (
     input clk,
     input L,
     input r_in,

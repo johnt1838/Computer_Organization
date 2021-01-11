@@ -1,5 +1,5 @@
 
-module top_module (
+module dffa10 (
     input clk,
     input resetn,   
     input in,

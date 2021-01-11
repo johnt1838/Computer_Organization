@@ -7,9 +7,9 @@
      reg q_in;
     wire Q;
 
-    top_module dff (.clk(clk), .L(L), .r_in(r_in), .q_in(q_in), .Q(Q));
+    dff8a dff (.clk(clk), .L(L), .r_in(r_in), .q_in(q_in), .Q(Q));
 
-    //always #5 clk = ~clk;
+   
 
     initial begin 
         $dumpfile("dumpfile.vcd");
